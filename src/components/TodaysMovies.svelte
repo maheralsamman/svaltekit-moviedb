@@ -6,13 +6,16 @@ console.log(todays);
 
 <h3>Movies of the day</h3>
 <div class="todays-movies">
-    {#each todays as todaysMovie (todaysMovie.imdbID)}
-    <MovieCard {todaysMovie}/>
+    {#each todays as movie (movie.imdbID)}
+    <MovieCard {movie}/>
     {/each}
 
 </div>
 
 <style>
+    h3 {
+        margin-left: 0.8em;
+    }
 .todays-movies{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

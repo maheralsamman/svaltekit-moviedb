@@ -1,14 +1,14 @@
 <script>
-	export let todaysMovie;
+	export let movie;
 </script>
 
 <div class="movie-card">
-    <a href={`/movie/${todaysMovie.imdbID}`}>
-        <img src={todaysMovie.Poster} alt={todaysMovie.Title} />
+    <a href={`/movie/${movie.imdbID}`}>
+        <img src={movie.Poster} alt={movie.Title} />
     </a>
 	<div class="description">
-		<h2>{todaysMovie.Title}</h2>
-		<p>{todaysMovie.Year}</p>
+		<h2>{movie.Title}</h2>
+		<p>{movie.Year}</p>
 	</div>
 </div>
 

@@ -11,7 +11,20 @@ const mySuggestions = [
 	'big',
 	'amazing'
 ];
-const mockData = [
+const randomElement = mySuggestions[Math.floor(Math.random() * mySuggestions.length)];
+export async function load({ fetch }) {
+          const apiKey = 'df88b29a';
+          const res = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${randomElement}`);
+          //const res = await fetch("https://www.omdbapi.com/?apikey=df88b29a&s=man")
+          const data = await res.json();
+          if (res.ok) {
+              return {
+			props: { todays: data.Search }
+		};
+	}
+}
+
+/* const mockData = [
     {
       "Title": "Iron Man",
       "Year": "2008",
@@ -82,20 +95,4 @@ const mockData = [
       "Type": "movie",
       "Poster": "https://m.media-amazon.com/images/M/MV5BMzY2ODk4NmUtOTVmNi00ZTdkLTlmOWYtMmE2OWVhNTU2OTVkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
     }
-  ]
-const randomElement = mySuggestions[Math.floor(Math.random() * mySuggestions.length)];
- export async function load({ fetch }) {
-     		return {
-			props: { todays: mockData }
-  		}}
-/*	const apiKey = 'df88b29a';
-	const res = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${randomElement}`);
-	//const res = await fetch("https://www.omdbapi.com/?apikey=df88b29a&s=man")
-	const data = await res.json();
-	if (res.ok) {
-		return {
-			props: { todays: data.Search }
-		};
-	}
-}
- */
+  ] */

@@ -37,7 +37,7 @@
 <style>
 	.search {
 		position: relative;
-		width: 30%;
+		width: 50%;
 		margin: 1rem;
 	}
 	button {
@@ -81,6 +81,6 @@
 		padding: 0rem 1rem;
 	}
     input.selected {
-        color: rgb(50, 50, 50);
+        background-color: rgb(50, 50, 50);
     }
 </style>
