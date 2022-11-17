@@ -4,7 +4,7 @@
 	export let word;
 </script>
 
-<h3>Movies of the day is about: <span>{word}</span></h3>
+<h3>Movies of the day are about: <span>{word}</span></h3>
 <div class="todays-movies">
 	{#each todays as movie (movie.imdbID)}
 		<MovieCard {movie} />
