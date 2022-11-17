@@ -1,5 +1,6 @@
 <script>
     import MovieCard from "./MovieCard.svelte"
+
 export let todays;
 console.log(todays);
 </script>

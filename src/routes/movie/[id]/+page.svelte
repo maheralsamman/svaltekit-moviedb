@@ -1,4 +1,6 @@
 <script>
+        import { fly } from 'svelte/transition';
+
 	export let data;
 	const { movie } = data.props;
 	const error = movie.Error ? movie.Error : null;
@@ -6,7 +8,7 @@
 	console.log(error);
 </script>
 
-<div class="movie-details">
+<div class="movie-details" in:fly={{ y: 50, duration: 500, delay: 500 }} out:fly={{ duration: 500 }}>
 	<div class="img-container">
 		<img src={movie.Poster} alt={movie.Title} />
 	</div>
