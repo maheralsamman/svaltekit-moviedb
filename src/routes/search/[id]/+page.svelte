@@ -2,7 +2,6 @@
 	import MovieCard from '../../../components/MovieCard.svelte';
 	export let data;
 	const { Search } = data.props.searchedMovie;
-    console.log(Search);
 </script>
 
 <div class="searched-movies">

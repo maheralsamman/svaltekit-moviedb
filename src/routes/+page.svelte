@@ -5,10 +5,9 @@
 	import { fly } from 'svelte/transition';
 	export let data;
 	const { todays, word } = data.props;
-	//console.log(todaysMovies);
 </script>
 
-<section in:fly={{ y: 50, duration: 500, delay: 500}} out:fly={{ duration: 500 }}>
+<section in:fly={{ y: 50, duration: 500, delay: 500 }} out:fly={{ duration: 500 }}>
 	<SearchMovie />
 	<TodaysMovies {todays} {word} />
 </section>
