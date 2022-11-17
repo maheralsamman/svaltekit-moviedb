@@ -3,7 +3,7 @@
 </script>
 
 <div class="movie-card">
-    <a href={`/movie/${movie.imdbID}`}>
+    <a sveltekit:prefetch sveltekit:noscroll href={`/movie/${movie.imdbID}`}>
         <img src={movie.Poster} alt={movie.Title} />
     </a>
 	<div class="description">

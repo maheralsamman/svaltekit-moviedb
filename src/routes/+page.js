@@ -1,3 +1,4 @@
+import { PUBLIC_API_KEY } from '$env/static/public'
 const mySuggestions = [
 	'man',
 	'game',
@@ -13,13 +14,11 @@ const mySuggestions = [
 ];
 const randomElement = mySuggestions[Math.floor(Math.random() * mySuggestions.length)];
 export async function load({ fetch }) {
-          const apiKey = 'df88b29a';
-          const res = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${randomElement}`);
-          //const res = await fetch("https://www.omdbapi.com/?apikey=df88b29a&s=man")
+          const res = await fetch(`https://www.omdbapi.com/?apikey=${PUBLIC_API_KEY}&s=${randomElement}`);
           const data = await res.json();
           if (res.ok) {
               return {
-			props: { todays: data.Search }
+			props: { todays: data.Search, word:randomElement }
 		};
 	}
 }
