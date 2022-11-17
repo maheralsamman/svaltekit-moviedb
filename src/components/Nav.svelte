@@ -12,7 +12,7 @@
 	a {
 		font-size: 2rem;
 		font-weight: bold;
-		font-family: 'Poppins';
+		font-family: 'Lato', sans-serif;
 		color: black;
 		text-decoration: none;
 	}

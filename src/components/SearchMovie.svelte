@@ -1,6 +1,6 @@
 <script>
-    import { goto } from "$app/navigation"
-    import { fly } from "svelte/transition"
+	import { goto } from '$app/navigation';
+	import { fly } from 'svelte/transition';
 
 	let inputValue = '';
 	let active = false;
@@ -11,14 +11,16 @@
 			active = false;
 		}
 	};
-    const submitSearch = () => {
-        goto("/search/" + inputValue)
-    }
+	const submitSearch = () => {
+		goto('/search/' + inputValue);
+	};
 </script>
 
 <form on:submit|preventDefault={submitSearch} class="search">
 	{#if !active}
-		<label in:fly={{ y:-10, duration: 500}} out:fly={{ y:-10, duration: 500}} for="searchTerm">Search Movie</label>
+		<label in:fly={{ y: -10, duration: 500 }} out:fly={{ y: -10, duration: 500 }} for="searchTerm"
+			>Search Movie</label
+		>
 	{/if}
 	<input
 		on:blur={cancelInactive}
@@ -27,11 +29,11 @@
 		type="text"
 		name="searchTerm"
 		id="searchTerm"
-        class={active ? "selected" : ""}
+		class={active ? 'selected' : ''}
 	/>
-    {#if inputValue}
-	<button in:fly={{ x:-250, duration: 500}} out:fly={{ x:-250, duration: 500}} >Search</button>
-    {/if}
+	{#if inputValue}
+		<button in:fly={{ x: -250, duration: 500 }} out:fly={{ x: -250, duration: 500 }}>Search</button>
+	{/if}
 </form>
 
 <style>
@@ -60,7 +62,7 @@
 		width: 100%;
 		border: none;
 		font-size: 1rem;
-		font-family: 'Poppins', sans-serif;
+		font-family: 'Lato', sans-serif;
 		outline: none;
 		color: rgb(255, 255, 255);
 		padding: 0.5rem 0.1rem;
@@ -80,7 +82,7 @@
 		color: #fff;
 		padding: 0rem 1rem;
 	}
-    input.selected {
-        background-color: rgb(50, 50, 50);
-    }
+	input.selected {
+		background-color: rgb(50, 50, 50);
+	}
 </style>

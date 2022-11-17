@@ -3,9 +3,9 @@
 </script>
 
 <div class="movie-card">
-    <a sveltekit:prefetch sveltekit:noscroll href={`/movie/${movie.imdbID}`}>
-        <img src={movie.Poster} alt={movie.Title} />
-    </a>
+	<a data-sveltekit-reload data-sveltekit-noscroll href={`/movie/${movie.imdbID}`}>
+		<img src={movie.Poster} alt={movie.Title} />
+	</a>
 	<div class="description">
 		<h2>{movie.Title}</h2>
 		<p>{movie.Year}</p>
