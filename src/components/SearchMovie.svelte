@@ -1,6 +1,6 @@
 <script>
     import { goto } from "$app/navigation"
-	import { prevent_default } from "svelte/internal";
+    import { fly } from "svelte/transition"
 
 	let inputValue = '';
 	let active = false;
@@ -18,7 +18,7 @@
 
 <form on:submit|preventDefault={submitSearch} class="search">
 	{#if !active}
-		<label for="searchTerm">Search Movie</label>
+		<label in:fly={{ y:-10, duration: 500}} out:fly={{ y:-10, duration: 500}} for="searchTerm">Search Movie</label>
 	{/if}
 	<input
 		on:blur={cancelInactive}
@@ -30,7 +30,7 @@
         class={active ? "selected" : ""}
 	/>
     {#if inputValue}
-	<button>Search</button>
+	<button in:fly={{ x:-250, duration: 500}} out:fly={{ x:-250, duration: 500}} >Search</button>
     {/if}
 </form>
 
